@@ -1,26 +1,70 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="wrapper">
+    <ul id="links">
+      <li>
+        <router-link to="/">
+          Home
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/create">
+          Create
+        </router-link>
+      </li>
+    </ul>
+    <router-view></router-view>
+    <hr>
+  </div>
+  <img src="./assets/logo.png" id="logo">
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  export default {
+    components: {
+      
+    }
+  };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: sans-serif;
+    padding: 20px;
+  }
+
+  a, a:link, a:active, a:visited {
+    color: initial;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: blue;
+  }
+
+  #wrapper {
+    border: 1px solid black;
+    padding: 20px;
+  }
+
+  #links {
+    margin-bottom: 15px;
+  }
+
+  #links li {
+    display: inline;
+  }
+
+  #logo {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    right: 10px;
+    bottom: 10px;
+  }
 </style>
